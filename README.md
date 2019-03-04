@@ -1,4 +1,4 @@
-#Automatic Romance Scam Classifier
+# Automatic Romance Scam Classifier
 
 This repository holds resources for a number of classifiers and preliminary experiments aimed at identifying online dating fraud profiles using only their accessible profile elements.
 
