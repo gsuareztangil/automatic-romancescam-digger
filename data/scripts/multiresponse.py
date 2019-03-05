@@ -18,6 +18,6 @@ for jsonfile in os.listdir(args.dir):
   profile = json.load(open(args.dir+os.sep+jsonfile,'r'))
   fn = jsonfile[:jsonfile.rindex('.')]
   if args.var in profile and profile[args.var]:
-#    for v in profile[args.var]:
+    for v in profile[args.var]:
       values = [fn, profile['username'], profile[args.var]]
       outhandle.writerow(values)

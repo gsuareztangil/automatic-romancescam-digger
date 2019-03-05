@@ -16,7 +16,8 @@ data. Raw and prepared forms of the data can be gathered by using these scripts.
 
 ### Raw
 
-Run `scripts/scamdownloader.py` and `scripts/realdownloader.py`
+Run `scripts/scamdownloader.py` and `scripts/realdownloader.py`. You will require
+Python 3 and the `BeautifulSoup4` library.
 
 The profile data is stored as individual single-line JSON files, named according
 to their page name from the source. The files should concatenate into a JSON-L
