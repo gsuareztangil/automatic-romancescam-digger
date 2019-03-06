@@ -6,7 +6,7 @@ For information on the preliminary experimentation which lead to this design, se
 ### Prerequisites
 
 This classifier code uses the R language, version 3.5.1.
-The libraries used can be installed with the following command.
+The libraries used here and in the preliminary experiments can be installed with the following R commands.
 
 ```{r}
 depends <- c("e1071","ROCR","PRROC","randomForest","C50","knitr")
@@ -27,7 +27,7 @@ variants of the same scam profile being allocated different folds, use the `redi
 
 ### Training and Output
 
-Run the classifier script from the commandline
+Run the classifier script from the command-line
 
 `$ Rscript classify.r`
 
@@ -37,4 +37,8 @@ Or from within an R terminal.
 source(classify.r)
 ```
 
+Performance figures on test, validation and within cross-validation (if applicable) will be shown as output.
+
+Two files will be created locally: `test_results.csv` and `validation_results.csv`. These are later used by
+the ensemble classifier.
 

@@ -1,5 +1,4 @@
 library(e1071)
-library(knitr) # Used for formatting script output only.
 library(randomForest)
 options(warn=-1)
 
@@ -260,7 +259,7 @@ show_performance <- function(input.labels, label, truth){
 
 	#Produce a confusion matrix
 	confusion <- table(paste("predict",input.labels), truth)
-	print(kable(confusion))
+	print(confusion)
 	cat("\n \n")
 	
 	#Calculate best precision, recall, f1
@@ -274,7 +273,7 @@ show_performance <- function(input.labels, label, truth){
 	f1 <- 2*((precision*recall)/(precision+recall))
 	accuracy <- (tp+tn)/(tp+tn+fp+fn)
 	res <- data.frame(measure = c("precision","recall","f1","acc"), value = c(round(precision,3), round(recall,3), round(f1,3), round(accuracy, 3)))
-	print(kable(res))
+	print(res)
 	cat("\n")
 	return()
 }

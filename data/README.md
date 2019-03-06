@@ -29,7 +29,7 @@ multi-response items but including a `scam` field to indicate whether the
 profile is of a scammer or not (1 is positive). This is accomplished through `csvise.py`
 
 The missing fields can be explored using additional CSV files,
-which relate to the other profile data using the username of the profile. Pass arguments to `rl.py`.
+which relate to the other profile data using the username of the profile. Pass arguments to `multiresponse.py`.
 
 ### Prepared
 
