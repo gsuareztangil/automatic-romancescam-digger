@@ -85,7 +85,7 @@ def extract_ngrams(input, n):
 # Machine Learning
 This code block trains a LibShortText model on each training partition of the data. Next, the model is evaluated on each test partition and the predictions are saved in a separate folder. 
 
-```Bash
+'''Bash
 import numpy, sys
 from subprocess import call
 
@@ -129,10 +129,10 @@ def Libshort_predict(featDir, testFile, parameters, modelFile):
 if __name__ == "__main__":
 	if sys.argv[1:]:
 		dir=sys.argv[1]
-		#Adjust parameter combinations. See ~//libshorttext-1.1/README.txt for LibShortText parameter options.
+		#Adjust parameter combinations. See ~/libshorttext-1.1/README.txt for LibShortText parameter options.
 		parameters = [['P0', 'F0', 'L0', 'N0', 'G1'], ['P0', 'F1', 'L0', 'N0', 'G1’]]
 		for parameter in parameters:
 			print parameter
 			initialize(dir, parameter)
-```
+'''
 
