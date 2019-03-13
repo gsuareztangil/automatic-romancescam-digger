@@ -5,7 +5,7 @@ This page covers the current performance of the descriptions classifier.
 # Instance Creation
 The first code block creates document instances for LibShortText for k-fold cross validation in Python.
 
-```
+```Bash
 from random import shuffle
 import json, os, unicodedata, itertools, operator, sys
 from nltk.tokenize import TweetTokenizer
@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
 The same approach was used to extract character n-grams, using the following code.
 
-```
+```Bash
 from nltk.util import ngrams
 
 #Extract character or word n-grams with '[b]' representing the left pad symbol (at the beginning of the string) and '[e]' representing the right pad symbol (at the end).
