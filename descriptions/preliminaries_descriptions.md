@@ -82,5 +82,57 @@ def extract_ngrams(input, n):
 	return ngram_feats
 ```
 
+# Machine Learning
+This code block trains a LibShortText model on each training partition of the data. Next, the model is evaluated on each test partition and the predictions are saved in a separate folder. 
 
+```Bash
+import numpy, sys
+from subprocess import call
+
+#Locate directory with LibShortText instances and initialize the experiments
+def initialize(dir, parameters):
+	outFiles=[]
+	instanceDir = os.path.join(dir,"instances")
+	trainFiles=sorted([os.path.join(instanceDir,file) for file in os.listdir(instanceDir) if 'train' in file])
+	testFiles=sorted([os.path.join(instanceDir,file) for file in os.listdir(instanceDir) if ‘test' in file])
+	if trainFiles == [] or testFiles == []:
+		print “Train or test files are missing.”
+	for trainFile, testFile in zip(trainFiles, testFiles):
+		modelFile = Libshort_train(featDir, trainFile, parameters)
+		outDir = Libshort_predict(featDir, testFile, parameters, modelFile)
+	print “LibShortText predictions are saved in %s" %outDir	
+
+#Train a LibShortText model
+def Libshort_train(featDir, trainFile, parameters):
+	#Add path
+	libshort_learn = ‘~/libshorttext-1.1/text-train.py'
+	modelDir = os.path.join(featDir, 'models')
+	if os.path.exists(modelDir) == False: os.mkdir(modelDir)
+	delim = ''
+	modelFile = modelDir + '/' + trainFile.split('/')[-1] + '.' + delim.join(parameters) + '.model'
+	call(['python', libshort_learn, '-P', parameters[0][-1], '-F', parameters[1][-1], '-L', parameters[2][-1], '-N', parameters[3][-1],'-G', parameters[4][-1], '-f', trainFile, modelFile], 0, None, None)
+	return modelFile
+
+#Apply LibShortText model on test data
+def Libshort_predict(featDir, testFile, parameters, modelFile):
+	#Add path
+	libshort_predict = ‘~/libshorttext-1.1/text-predict.py'
+	outDir = os.path.join(featDir, 'outfiles')
+	if os.path.exists(outDir) == False: os.mkdir(outDir)
+	delim = ''
+	modelDir = modelFile.split('/')[:-1]
+	modelDir = '/'.join(modelDir)
+	outFile = outDir + '/' + modelFile.split('/')[-1] + '.' + delim.join(parameters) + '.out'
+	call(['python', libshort_predict, '-f', testFile, modelFile, outFile], 0, None, None)
+	return outDir
+
+if __name__ == "__main__":
+	if sys.argv[1:]:
+		dir=sys.argv[1]
+		#Adjust parameter combinations. See ~//libshorttext-1.1/README.txt for LibShortText parameter options.
+		parameters = [['P0', 'F0', 'L0', 'N0', 'G1'], ['P0', 'F1', 'L0', 'N0', 'G1’]]
+		for parameter in parameters:
+			print parameter
+			initialize(dir, parameter)
+```
 
