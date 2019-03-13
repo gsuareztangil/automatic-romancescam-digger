@@ -75,7 +75,8 @@ The same approach was used to extract character and word n-grams, using the foll
 ```Bash
 from nltk.util import ngrams
 
-#Extract character or word n-grams with '[b]' representing the left pad symbol (at the beginning of the string) and '[e]' representing the right pad symbol (at the end).
+#Extract character or word n-grams with '[b]' representing the left pad symbol 
+#(at the beginning of the string) and '[e]' representing the right pad symbol (at the end).
 def extract_ngrams(input, n):
 	ngram_feats = list(ngrams(input, n, True, True, '[b]', '[e]'))
 	return ngram_feats
