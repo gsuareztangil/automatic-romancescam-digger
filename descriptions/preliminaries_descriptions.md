@@ -85,7 +85,7 @@ def extract_ngrams(input, n):
 # Machine Learning
 This code block trains a LibShortText model on each training partition of the data. Next, the model is evaluated on each test partition and the predictions are saved in a separate folder. 
 
-'''Bash
+```python
 import numpy, sys
 from subprocess import call
 
@@ -134,5 +134,5 @@ if __name__ == "__main__":
 		for parameter in parameters:
 			print parameter
 			initialize(dir, parameter)
-'''
+```
 
