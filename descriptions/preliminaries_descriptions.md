@@ -42,7 +42,7 @@ def extract_text(doc):
 				out = 'real' + '\t' + text
 			return (out, doc)
 
-#Create instances from jsonfiles.
+#Create instances from jsonfiles in a k-fold cross validation set-up.
 if __name__ == "__main__":
 	if sys.argv[1:]:
 		dir = sys.argv[1]
