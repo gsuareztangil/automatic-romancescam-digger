@@ -136,7 +136,7 @@ if __name__ == "__main__":
 			initialize(dir, parameter)
 ```
 
-This code block trains and tests a Scikit-learn Multinomial Naive Bayes classification model on each partition using the LibShortText instance format. Other Scikit-learn classifiers were trained with the appropriate changes.
+This code block trains and tests a Scikit-learn Multinomial Naive Bayes classification model on each partition using the LibShortText instance format. Other Scikit-learn classifiers were also imported and evaluated.
 
 ```python
 
