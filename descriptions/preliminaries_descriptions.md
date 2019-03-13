@@ -70,7 +70,7 @@ if __name__ == "__main__":
 		print "LibShortText instances are saved in %s" %instanceDir
 ```
 
-The same approach was used to extract character n-grams, using the following code.
+The same approach was used to extract character and word n-grams, using the following code.
 
 ```Bash
 from nltk.util import ngrams
