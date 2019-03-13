@@ -136,3 +136,62 @@ if __name__ == "__main__":
 			initialize(dir, parameter)
 ```
 
+This code block trains and tests a Scikit-learn Multinomial Naive Bayes classification model on each partition using the LibShortText instance format. Other Scikit-learn classifiers were trained with the appropriate changes.
+
+```python
+
+import sys,os
+from collections import Counter
+from nltk.classify import SklearnClassifier
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
+from sklearn.pipeline import Pipeline
+from sklearn.naive_bayes import MultinomialNB
+
+#Locate LibShortText instances and Initialize the experiments.
+def initialize(dir):
+	instanceDir = os.path.join(dir,"instances")
+	trainFiles=sorted([os.path.join(instanceDir,file) for file in os.listdir(instanceDir) if 'train' in file])
+	testFiles=sorted([os.path.join(instanceDir,file) for file in os.listdir(instanceDir) if 'test' in file])
+	outDir = os.path.join(instanceDir, 'outfiles')
+	if os.path.exists(outDir) == False: os.mkdir(outDir)
+	for trainFile, testFile in zip(trainFiles, testFiles):
+		out = testFile.split('/')[-1] + '.sklearn_NB.out'
+		fout = os.path.join(outDir, out)
+		outFile = open(fout, 'w')
+		sklearn(trainFile, testFile, outFile)
+	print "Scikit-learn classifier predictions are saved in %s" %outDir
+
+def read_libshort_instances(file):
+	o = open(file, 'r').readlines()
+	lines = [i.strip() for i in o]
+	instances = []
+	for i, line in enumerate(lines):
+		all = line.split('\t')
+		label = all[0]
+		if len (all) > 1:
+			featureDict = Counter(all[1].split(' '))
+			instances.append((featureDict, label))
+	return instances
+
+
+#Train and test a scikit-learn classification model.
+def sklearn(trainFile, testFile, outFile):
+	pipeline = Pipeline([('tfidf', TfidfTransformer()), ('Mnb', MultinomialNB())])
+	classifier = SklearnClassifier(pipeline)
+	train_instances = read_libshort_instances(trainFile)
+	all_test = read_libshort_instances(testFile)
+	goldLabels = []
+	test_instances = []
+	for (featDict, goldLabel) in all_test:
+		test_instances.append(featDict)
+		goldLabels.append(goldLabel)
+	model = classifier.train(train_instances)
+	predictedLabels = classifier.classify_many(test_instances)
+	for goldLabel, predictedLabel in zip(goldLabels, predictedLabels):
+		outFile.write(predictedLabel + '\t' + goldLabel + '\n')
+
+if __name__ == "__main__":
+	if sys.argv[1:]:
+		dir=sys.argv[1]
+		initialize(dir)
+```
