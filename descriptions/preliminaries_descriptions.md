@@ -1,6 +1,6 @@
 # Description Classifier
 
-This page covers the current performance of the descriptions classifier. 
+This page covers the approach taken for the descriptions classifier.
 
 # Instance Creation
 The first code block creates document instances for LibShortText for k-fold cross validation in Python.
@@ -172,7 +172,6 @@ def read_libshort_instances(file):
 			featureDict = Counter(all[1].split(' '))
 			instances.append((featureDict, label))
 	return instances
-
 
 #Train and test a scikit-learn classification model.
 def sklearn(trainFile, testFile, outFile):
