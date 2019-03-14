@@ -9,8 +9,8 @@ This code uses Python version 2.7.14. Additionally, the LibShortText machine lea
 
 ### Training and output
 
-Run the classifier script from the command-line using
+After adjusting the path to your LibShortText directory, run the classifier script from the command-line using
 
-`$ python run_descr_classifier.py trainDir testDir validationDir`
+`$ python classify.py trainDir testDir validationDir`
 
-These directories should contain all JSON files assigned to training, testing and validation, see the [data](../data/README.md) directory. Two files will be created locally: `test_results.csv` and `validation_results.csv`. These are later used by the ensemble classifier.
+The three given directories should contain all JSON files assigned to training, testing and validation, respectfully (see the [data](../data/README.md) directory). A new directory will be created locally called `description_classification`, which contains 3 subdirectories containing the generated document instances, the modelfiles and the outfiles. Additionally, 2 files will be created: `test_results.csv` and `validation_results.csv`. These are later used by the ensemble classifier.
