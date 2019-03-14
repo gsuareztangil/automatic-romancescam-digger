@@ -1,6 +1,11 @@
 ## Captions Classifier
 
+This page explains the captions classifier currently in use in the [ensemble](../ensemble/README.md). 
+For information on the extraction of captions, see the [feature extraction](features.md).
+
 ### Prerequisites
+
+Python sklearn kit.
 
 ### Training
 
