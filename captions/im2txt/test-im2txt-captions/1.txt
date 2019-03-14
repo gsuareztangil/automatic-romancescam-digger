@@ -1,0 +1,5 @@
+Captions for image 06625c60c32131a317b4b9e761fdbaa0.jpg:
+  0) a woman in a dress shirt and tie holding a cell phone . (p=0.000024)
+  1) a woman in a dress shirt and tie is smiling . (p=0.000012)
+  2) a woman in a dress shirt and tie holding a phone . (p=0.000009)
+

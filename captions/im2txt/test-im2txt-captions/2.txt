@@ -1,0 +1,5 @@
+Captions for image 0654f2a5032e67364768a42dfdb06667.jpg:
+  0) a man in a suit and tie standing in a kitchen . (p=0.000207)
+  1) a man in a suit and tie standing in a room . (p=0.000175)
+  2) a man in a suit and tie standing in a kitchen (p=0.000053)
+

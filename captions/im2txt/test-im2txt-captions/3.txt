@@ -1,0 +1,4 @@
+Captions for image 04521fbfd44fbfbc14529a4b9633d685.jpg:
+  0) a woman standing in a kitchen next to a stove . (p=0.001587)
+  1) a woman standing in a kitchen next to a stove top oven . (p=0.001180)
+  2) a woman standing in a kitchen next to a counter . (p=0.000726)
