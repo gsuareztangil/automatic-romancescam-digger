@@ -73,7 +73,7 @@ def binarize_label(label):
 #Generate a csv file containing profile number, gold_label, predicted_label, scam_probability to be used by the ensemble learner.
 def write_csv(outFile, testFile, no_descr_test):
 	csv_dict = defaultdict(list)
-	csv_name = outFile.split('/')[-1].split('_')[0] + '.csv'
+	csv_name = outFile.split('/')[-1].split('_')[0] + '_results.csv'
 	csvfile = open(os.path.dirname(os.path.dirname(outFile)) + '/' + csv_name, 'wb')
 	csv_writer = csv.writer(csvfile, delimiter=',')
 	csv_writer.writerow(['profile', 'gold_label', 'descriptionClassifier_label', 'descriptionClassifier_probability']) 
