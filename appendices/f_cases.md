@@ -1,4 +1,4 @@
-#Appendix F: True Positive and True Negative cases
+# Appendix F: True Positive and True Negative cases
 
 In Section IV of the paper, we discuss false positive and false negative cases
 from the classification results. We also examined true positive and negative
@@ -26,7 +26,8 @@ language.
 
 
 > Hi.,
-> Am Vivia. How are you doing? I would be very happy to have a great friendship with you. my personal email is ( <user>$@hotmail.com ) I look forward to hearing from you,
+> Am Vivia. How are you doing? I would be very happy to have a great friendship
+> with you. my personal email is ( $user$@hotmail.com ) I look forward to hearing from you,
 > Vivia
 
 The revelation of personal details also breaks

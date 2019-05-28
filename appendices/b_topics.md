@@ -1,4 +1,4 @@
-# Appendix B: Topic Variety in Profile Description
+# Appendix B: Topic Variety in Profile Descriptions
 
 [fig7]: figures/descr_topics.png
 
