@@ -62,7 +62,7 @@ source.
 ![Fig. 4d reproduced from the paper, a scammer profile image][fig4d]
 
 1. A man sitting in front of a laptop computer (`p = 13.1e-03`)
-2. A man sitting at a table with a laptop (`p = 3.6e-03)
+2. A man sitting at a table with a laptop (`p = 3.6e-03`)
 3. A man sitting at a table with a laptop computer (`p = 2e-03`)
 
 These descriptions belong to an image from the _scammer_ category. The image 
