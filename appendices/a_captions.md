@@ -43,7 +43,7 @@ shows a man standing in the deck of a boat as correctly predicted.
 
 ### Descriptions automatically generated from Fig. 4c
 
-![Fig. 4c reproduced from the paper, a real but anonymised profile image][fig4c]
+![Fig. 4c reproduced from the paper, a scammer profile image][fig4c]
 
 1. A man riding on the back of a brown horse (`p = 11.8e-03`)
 2. A man riding on the back of a horse  (`p = 1.3e-03`)
@@ -59,7 +59,7 @@ source.
 
 ### Descriptions automatically generated from Fig. 4d
 
-![Fig. 4d reproduced from the paper, a real but anonymised profile image][fig4d]
+![Fig. 4d reproduced from the paper, a scammer profile image][fig4d]
 
 1. A man sitting in front of a laptop computer (`p = 13.1e-03`)
 2. A man sitting at a table with a laptop (`p = 3.6e-03)
